@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Excel Add-in</title>
+    <link rel="stylesheet" href="./taskpane.css" />
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <h1>Open Excel Add-in</h1>
+        <p class="muted">실험용 ChatGPT OAuth + Excel range read/write add-in</p>
+      </section>
+
+      <section class="panel">
+        <div class="row between">
+          <div>
+            <h2>OAuth</h2>
+            <p id="auth-status" class="muted">로그인되지 않음</p>
+          </div>
+          <div class="row actions-inline">
+            <button id="reset-auth-button" class="button secondary">Reset token</button>
+            <button id="login-button" class="button">Experimental ChatGPT Sign-in</button>
+          </div>
+        </div>
+        <p class="note">이 로그인은 실험적입니다. 인증 자체는 가능할 수 있지만 무료 사용 entitlement는 보장되지 않으며, 저장된 토큰은 prototype 용도로만 다뤄야 합니다.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Read / Write</h2>
+        <label class="field">
+          <span>Range or anchor</span>
+          <input id="address-input" type="text" value="A1" />
+        </label>
+
+        <label class="field">
+          <span>Text (TSV supported)</span>
+          <textarea id="values-input" rows="8" placeholder="예:&#10;name\tage&#10;kim\t25"></textarea>
+        </label>
+
+        <div class="row actions">
+          <button id="read-button" class="button secondary">Read</button>
+          <button id="write-button" class="button">Write</button>
+        </div>
+        <p class="note">Read는 입력한 range를 그대로 읽고, Write는 입력한 address를 좌상단 anchor로 사용합니다. 입력 텍스트는 TSV 기준이며 셀 내부 탭/줄바꿈은 lossless round-trip을 보장하지 않습니다.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Status</h2>
+        <pre id="status-output" class="output">Office 초기화 대기 중...</pre>
+      </section>
+    </main>
+
+    <script src="./taskpane.js"></script>
+  </body>
+  </html>
