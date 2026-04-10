@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:type="TaskPaneApp">
+  <Id>5d9f7845-d75f-4a27-9914-c98db2d688a0</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Open Excel</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Open Excel Add-in" />
+  <Description DefaultValue="Experimental Excel add-in with ChatGPT OAuth spike and range read/write." />
+  <IconUrl DefaultValue="https://byungwook-kim.github.io/open-excel-add-in/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://byungwook-kim.github.io/open-excel-add-in/assets/icon-80.png" />
+  <SupportUrl DefaultValue="https://byungwook-kim.github.io/open-excel-add-in/taskpane.html" />
+  <AppDomains>
+    <AppDomain>https://byungwook-kim.github.io/open-excel-add-in</AppDomain>
+    <AppDomain>https://auth.openai.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://byungwook-kim.github.io/open-excel-add-in/taskpane.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>
