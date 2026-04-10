@@ -363,17 +363,17 @@ npm run validate
 
 #### 3-1) GitHub Pages로 무료 배포
 
+**배포된 주소**: `https://byungwook-kim.github.io/open-excel-add-in/`
+
 ```powershell
-# 1. GitHub에 저장소 만들고 로컬 폴더와 연결
+# 1. GitHub에 저장소 만들고 로컬 폴더와 연결 (이미 함)
 git init
 git add .
 git commit -m "Initial commit"
 
-# 2. GitHub Pages 활성화
-# 저장소 → Settings → Pages → Source: "main branch" → Save
+# 2. GitHub Pages 활성화 (저장소 → Settings → Pages → Source: "main branch" → Save)
 
 # 3. npm으로 배포 ( gh-pages 패키지 필요)
-npm install
 npm run deploy
 ```
 
@@ -381,7 +381,7 @@ npm run deploy
 
 **주의**: 매니페스트의 URL이 `localhost:3000`으로 되어 있어서, 배포 후 매니페스트의 URL을 실제 배포 URL로 수정해야 합니다.
 
-예를 들어, GitHub Pages URL이 `https://yourname.github.io/open-excel-add-in/`이라면:
+예를 들어, GitHub Pages URL이 `https://byungwook-kim.github.io/open-excel-add-in/`이라면:
 
 `manifest.xml`에서:
 ```xml
@@ -389,9 +389,9 @@ npm run deploy
 ```
 를
 ```xml
-<IconUrl DefaultValue="https://yourname.github.io/open-excel-add-in/assets/icon-32.png" />
+<IconUrl DefaultValue="https://byungwook-kim.github.io/open-excel-add-in/assets/icon-32.png" />
 ```
-로 모두 변경합니다.
+로 모두 변경합니다. (이미 수정됨)
 
 #### 3-2) 사용자에게 배포
 

@@ -23,5 +23,5 @@
     "webpack-dev-server": "^5.2.0",
     "gh-pages": "^6.1.1"
   },
-  "homepage": "https://<username>.github.io/<repo>/"
+  "homepage": "https://byungwook-kim.github.io/open-excel-add-in/"
 }
